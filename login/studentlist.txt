@@ -1,0 +1,10 @@
+id	name	email	age	major
+1	John Morada	john.morada@gmail.com	22	Computer Science
+3	Megan Young	megan.young@gmail.com	21	Psychology
+4	Sarah Prinsesa	sarah.prinsesa@gmail.com	23	Business
+5	David Salon	david.salon@gmail.com	20	Computer Science
+6	Angel Maceda	angel.maceda@gmail.com	22	Mathematics
+7	Angelo Berzuela	angelo.berzuela@gmail.com	21	Chemistry
+8	Mariane Rivera	mariane.rivera@gmail.com	22	Chemistry
+9	Mark Buemia	mark.buemia@gmail.com	19	Art History
+				
