@@ -171,7 +171,7 @@ Public Class enrollmentList
         Try
             If Not String.IsNullOrEmpty(csvFilePath) Then
 
-                Dim backupFilePath As String = Path.Combine(Path.GetDirectoryName(csvFilePath), "assignmentBackup.txt")
+                Dim backupFilePath As String = Path.Combine(Path.GetDirectoryName(csvFilePath), "enrollmentlistBackup.bat")
                 File.Copy(csvFilePath, backupFilePath, True)
 
                 MessageBox.Show("CSV file backed up successfully!")

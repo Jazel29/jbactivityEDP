@@ -50,6 +50,7 @@ Partial Class coursesList
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.btnBackup = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnPrint = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -291,11 +292,23 @@ Partial Class coursesList
         Me.Button2.Text = "Locate"
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'btnPrint
+        '
+        Me.btnPrint.BackColor = System.Drawing.Color.Aquamarine
+        Me.btnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrint.Location = New System.Drawing.Point(753, 324)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Size = New System.Drawing.Size(75, 32)
+        Me.btnPrint.TabIndex = 68
+        Me.btnPrint.Text = "Print"
+        Me.btnPrint.UseVisualStyleBackColor = False
+        '
         'coursesList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(847, 371)
+        Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnBackup)
         Me.Controls.Add(Me.btnDashboard)
@@ -355,4 +368,5 @@ Partial Class coursesList
     Friend WithEvents btnDashboard As Button
     Friend WithEvents btnBackup As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents btnPrint As Button
 End Class
