@@ -1,6 +1,4 @@
-﻿Imports Microsoft.Office.Interop
-
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 Module loginModule
     Public conn As MySqlConnection = New MySqlConnection
     Public ds As New DataSet

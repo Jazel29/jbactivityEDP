@@ -2,9 +2,12 @@
 Imports System.Data.SqlClient
 Imports System.IO
 Imports Microsoft.VisualBasic.FileIO
+Imports Microsoft.Office.Interop
+
 Public Class enrollmentList
     Public DBConnection As New MySqlConnection
     Public adp As SqlDataAdapter
+    Dim exlFile As Excel.Application
 
     Public Sub Connect_to_DB()
 
@@ -180,6 +183,33 @@ Public Class enrollmentList
             End If
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message)
+        End Try
+    End Sub
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+
+        Try
+            exlFile = New Excel.Application
+            exlFile.Workbooks.Open("C:\Users\Mark Louie Manrique\source\repos\login\template\enrollmentTemplate.xlsx")
+
+            Dim rowCount As Integer = DataGridView1.Rows.Count
+            For i As Integer = 0 To rowCount - 2
+                For j As Integer = 0 To DataGridView1.Columns.Count - 1
+                    exlFile.Cells(i + 6, j + 1).Value = DataGridView1.Rows(i).Cells(j).Value
+                Next
+            Next
+
+            exlFile.Cells(4, 5) = "Date: " & FormatDateTime(Now(), DateFormat.LongDate)
+
+            Dim filename As String = "enrollmentRecord_" & DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") & ".xlsx"
+            Dim path As String = "C:\Users\Mark Louie Manrique\source\repos\login\sampleOutput\" & filename
+            exlFile.ActiveWorkbook.SaveAs(path)
+
+            MessageBox.Show("File saved successfully: " & filename, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            exlFile.Visible = True
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        Finally
+            exlFile = Nothing
         End Try
     End Sub
 End Class

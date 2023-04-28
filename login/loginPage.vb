@@ -10,7 +10,7 @@
 
         If dr.Read Then
             dashboard.Show()
-
+            Me.Hide()
         Else
             MsgBox("Invalid Username or Password")
         End If
